@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+
+    UILabel *textLabel;
+}
+
+@property (nonatomic, retain) 
+IBOutlet UILabel *textLabel;
+
+-(IBAction)changeTheTextOfTheLabel;
 
 @end

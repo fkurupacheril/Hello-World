@@ -10,13 +10,28 @@
 
 @implementation ViewController
 
+@synthesize textLabel;
+
+- (IBAction)changeTheTextOfTheLabel
+{
+    [textLabel setText:@"Hello, World!"];
+}
+
 - (void)didReceiveMemoryWarning
 {
+
+    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 
 - (void)viewDidLoad
 {
@@ -51,7 +66,7 @@
 	[super viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+/* - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -59,6 +74,12 @@
     } else {
         return YES;
     }
+}*/
+
+- (void)dealloc
+{
+//  [textLabel release];
+  //[super dealloc];
 }
 
 @end
